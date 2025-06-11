@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'enregistrer</title>
+   <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">	 
+	 <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Font Awesome Css -->
+	<link rel="stylesheet" href="{% static 'fonts/font-awesome.css' %}">
+	<!-- Menu -->
+	<link href="{% static 'css/flexy-menu.css' %}" rel="stylesheet">
+	<!-- Testimonial CSS -->
+	<link href="{% static 'css/cubeportfolio.min.css' %}" rel="stylesheet">
+	
+</head>
+<body>
+    <section>
+        <div class="container">
+            <ul class="nav-item" style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top:40px;border-radius:25px;box-shadow:6px 7px 6px 7px;"><a href="{% url 'connexion' %}" class="nav-link" style="text-align:center;">Page d'acceuille</a></li>
+        </div>
+        <div>
+            {% if messages %}
+                {% for messag in messages %}
+                <p>{{ messag }}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+    <div class="container">
+        <div class="row" style="margin-left: 25%; border:1px solid black; height:550px ;margin-right:25%; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top:30px;border-radius:25px;box-shadow:6px 7px 6px 7px;">
+            <div class="col-md-12">
+                        <p class="mb-4" style="text-align: center;">Creer un compte dans le site</p>
+                        <p class="mb-4" style="text-align: center;">Assurer vous que vos informations soient complete, si vous etes suspecter de malveillance ou autre l'admin vous retirera aussitot!</p>
+                        <form action="#" class="signup-form" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label class="label" for="name">Nom</label>
+                            <input type="text" name="nom" class="form-control" placeholder="Veuillez entrez votre nom">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="name">Adresse Email</label>
+                            <input type="text" name="email" class="form-control" placeholder="Veuillez entrez votre adresse email">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="name">Password</label>
+                            <input type="text" name="password1" class="form-control" placeholder="Veuillez entrez votre password">
+                        </div>
+                        <div class="form-group">
+                            <label class="label" for="password">Confirm Password</label>
+                            <input id="password-field" type="password" name="password2" class="form-control" placeholder="Confirmez votre password">
+                        </div>
+                        <div class="form-group" style="text-align: center;">
+                            <label for="">Statut de l'utilisateur</label>
+                            <select name="role"  >
+                                <option value="parent">Parent</option>
+                                <option value="etudiant">Etudiant</option>
+                                <option value="formateur">Formateur</option>
+                            </select>
+                        </div>
+                        <div class="form-group d-flex justify-content-end mt-4">
+                            <button type="submit" class="btn btn-primary submit"><span class="fa fa-paper-plane"></span></button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="" style="margin-top: 40px;">
+
+        </div>
+    </div>
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+<script src="{% static 'js/scrollax.min.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{% static 'js/google-map.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

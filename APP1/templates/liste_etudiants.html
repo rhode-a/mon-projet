@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Listes des etudiants{% endblock %}
+{% block content %}
+  <hr>
+  <style>
+
+    h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: #007BFF;
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    padding: 40px;
+    text-align: center;
+  }
+
+  table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  thead {
+    background-color:rgba(255, 0, 234, 0.3);
+    color: white;
+    text-transform: uppercase;
+  }
+
+  th, td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  button {
+    background-color: #17a2b8;
+    color: white;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #138496;
+  }
+</style>
+
+  <h2>Liste des Etudiants</h2>
+  <ul>
+   
+      <table>
+  <thead>
+    <tr>
+      <th>Étudiants</th>
+      <th>Options et ses détails</th>
+      <th>Niveau</th>
+      <th>Date d'inscription</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for etudiant in etudiants %}
+    <tr>
+      <td>{{ etudiant.user }}</td>
+      <td>{{ etudiant.option }}</td>
+      <td>{{ etudiant.niveau }}</td>
+      <td>{{ etudiant.date_inscription }}</td>
+      <td><a href="#"><button>Détails</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  </ul>
+{% endblock %}

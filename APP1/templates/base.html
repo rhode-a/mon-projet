@@ -1,0 +1,616 @@
+{%  load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>T.T.G </title>
+
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">	 
+	 <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- Animate CSS -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- Font Awesome Css -->
+	<link rel="stylesheet" href="{% static 'fonts/font-awesome.css' %}">
+	<!-- Menu -->
+	<link href="{% static 'css/flexy-menu.css' %}" rel="stylesheet">
+	<!-- Testimonial CSS -->
+	<link href="{% static 'css/cubeportfolio.min.css' %}" rel="stylesheet">
+	
+	
+	<!-- Font  -->
+	<link href="http://fonts.googleapis.com/css?family=Passion+One:400,700,900" rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel='stylesheet' type='text/css'>
+
+    
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  
+  </head>
+  <body>
+  
+  
+ 
+  
+
+  
+<!--header-->
+<header class="clearfix">
+ 
+	<div class="box"> 
+		<div class="container">
+		
+			<div class="header-element clearfix"> 
+				<div class="row">
+					<div class="col-md-4">
+						<h1 class="navbar-brand navbar-brand_"><a href="{% url 'index' %}"><img class="img-responsive" src="{% static 'img/logo.png'  %}" alt="logo"></a></h1>
+					</div>
+					<div class="col-md-8">
+						<ul class="flexy-menu orange">
+							<li class="active"><a href="{% url 'index' %}"><i class="icon-heart"></i>Home</a></li>
+							<li><a href="{% url 'preinscription' %}"><i class="icon-cogs"></i>Preinscription</a></li>
+							<li><a href="{% url  'options' %}"><i class="icon-th"></i>Events</a>
+							</li>
+							<li><a href="{% url 'liste_emargements' %}"><i class="icon-th"></i>Liste Emargement</a></li>
+							<li><a href="{% url 'article' %}"><i class="icon-th"></i>Articles</a></li>
+							<li><a href="{% url 'recherche_moyenne' %}"><i class="icon-th"></i>Moyenne</a></li>
+							<li><a href="{% url 'filiere' %}"><i class="icon-th"></i>Filiere</a></li>
+							<li><a href="{% url 'niveau' %}"><i class="icon-th"></i>Niveaux</a></li>
+							<li><a href="{% url 'etudiant' %}"><i class="icon-th"></i>Etudiants</a></li>
+						
+								<ul>
+									<li><a href="{% url 'matiere' %}">Matiere</a></li>
+									<li><a href="{% url 'enseignement' %}">Enseignement</a></li>
+								</ul>
+							</li>
+							<li><a href="{% url 'note' %}"><i class="icon-envelope"></i>Note</a></li>
+              <li><a href="{% url 'admin:index' %}"><i class="icon-envelope"></i>Supression/Ajout/Modification</a></li>
+              <li><a href="{% url 'urlregister' %}">Ajouter un utilisateur</a></li>
+          <li><a href="{% url 'urllogout' %}">deconnexion</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>			
+	</div>	
+</header>
+<!--header-->
+ 
+
+<div class="du-banner-area">
+
+	<div class="du-featured-photo">
+		<img class="img-responsive" src="{% static 'img/dream-slider.jpg' %}" alt="featured photo">
+		<div class="du-featured-text">
+			<!--welcome-message-->
+			<header class="welcome-message text-center">
+			  <h1><span class="rotate"> T.T.G NETWORK  </span></h1>
+			</header>
+			<!--welcome-message end--> 
+      
+		</div>
+	</div>
+
+</div>
+<div class="clear"></div>
+<center><h1>T.T.G Network - Capitale du Numérique</h1></center>
+      <main>
+          <p>Utilisateur connecte : {{user}}</p>
+            {% if user.is_authenticated %}
+            {% if user.role %}
+            <p>Bievenue cher {{user.role}} </p>
+            {% else %}
+            <p>Bievenue cher Admin </p>
+            {% endif %}
+              {% if user.matricule %}
+              <p>ton matricule est {{user.matricule}}</p>
+              <p>
+                  Cher etudiant merci d'avoir choisit T.T.G Network - Gestion École.
+                  Nous vous garantissons un apprentissage serieux et rigoureux main dans 
+                  la main nous avancerons en tentant de combler nos lacunes un grand merci
+                  encore pour la confiance et blaindez votre morale car la route sera longue
+              </p>
+              {% elif user.code_formateur %}
+              <p>ton code est {{user.code_formateur}}</p>
+              <p>
+                  Cher Formateur merci d'avoir choisit T.T.G Network - Gestion École.
+                  Nous vous garantissons un engagegement sans faille de votre contrat main 
+                  dans la main nous avancerons en tentant de combler nos lacunes un grand merci
+                  encore pour la confiance et blaindez votre morale nous avons foi en vous
+                  competences faites eblouir nos pepites
+              </p>
+              {% else %}
+              <center>
+                <p>
+                    <b>
+                  Cher Administrateur mercid'avoir choisit T.T.G Network - Gestion École.
+                  la charge est en grande a votre egard mais si vous avez autant d'
+                  autorite c'est en guise de notre confiance, soyez en bonne sante pour le 
+                  bien des operations!
+                  </b>
+              </p>
+              </center>
+              {% endif %}
+            {% endif %}
+          
+        
+          <hr>
+        </main>
+        {% block content %}
+        
+        <!-- Contenu spécifique à chaque page -->
+        {% endblock %}
+
+
+<div class="dream-university">
+
+	
+	<!--Begin feature-->
+	<div class="du-feature"> 
+		<div class="container"> 
+			<div class="row">
+			
+				<div class="col-lg-4 col-md-4 col-sm-4">
+					<div class="du-feature-box maxheight wow fadeIn">
+						<div class="badge"><img src="{% static 'img/page1_icon1.png' %}" alt=""></div>
+						<div class="du-caption-box">
+							<div class="du-caption">
+								<p class="title">Progressive Programs</p>
+								<p>Lorem ipsum dolor sit amet, consectscing elit. Maecenas moleset alldbus id ictum. Ut neque purus, sollic alitudin non ante ac, malesuada. condimentum libero. </p>
+								<a href="#" class="btn-default du-common-property">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.1s">
+					<div class="du-feature-box maxheight">
+						<div class="badge"><img src="{% static 'img/page1_icon2.png' %}" alt=""></div>
+						<div class="du-caption-box">
+							<div class="du-caption">
+								<p class="title">online education</p>
+								<p>Lorem ipsum dolor sit amet, consectscing elit. Maecenas moleset alldbus id ictum. Ut neque purus, sollic alitudin non ante ac, malesuada. condimentum libero. </p>
+								<a href="#" class="btn-default du-common-property">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4 wow fadeIn" data-wow-delay="0.2s">
+					<div class="du-feature-box maxheight">
+						<div class="badge"><img src="{% static 'img/page1_icon3.png' %}" alt=""></div>
+						<div class="du-caption-box">
+							<div class="du-caption">
+								<p class="title">International students</p>
+								<p>Lorem ipsum dolor sit amet, consectscing elit. Maecenas moleset alldbus id ictum. Ut neque purus, sollic alitudin non ante ac, malesuada. condimentum libero. </p>
+								<a href="#" class="btn-default du-common-property">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<!-- End feature -->
+	
+	
+	
+	<!--Begin our faculty-->
+    <div class="our-faculty">
+        <div class="container"> 
+            <h2 class="center">Our Faculty:</h2>
+			
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+			
+            <div class="row">
+			
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInLeft">
+                        <figure><a href=#><img class="img-responsive" src="{% static 'img/architechture.jpg' %}" alt="image"></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3><a href=#>Architecture</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInLeft" data-wow-delay="0.2s">
+                        <figure><a href=#><img class="img-responsive" src="{% static 'img/engineerning.jpg' %}" alt="image"></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3><a href=#>Engineering</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><a href=#><img src="{% static 'img/eco-student.jpg' %}" alt="image"></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3><a href=#>Economics and Social Sciences</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><a href=#><img src="{% static 'img/english.jpg' %}" alt="image"></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3><a href=#>English and Humanities</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><a href=#><img src="{% static 'img/math-natural.jpg' % }" alt="image"></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3><a href=#>Mathematics and Natural Sciences</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><a href=#><img src="{% static 'img/pharmecy.jpg' %}" alt=""></a></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3><a href=#>Pharmacy</a></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+	<!--End our faculty-->
+	
+	
+	
+	<!--Begin for student -->
+    <div class="for-students">
+        <div class="container"> 
+            <h2 class="center">For student:</h2>
+			
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+			
+            <div class="row">
+			
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInLeft">
+                        <figure><img src="{% static 'img/page1_pic1.jpg' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Attendance procedure</h3>
+                                <p>Lorem ipsum dolor sit amet, consectscing elit. Maecenas moleset alldbus id ictum. Ut neque purus, sollic alitudin non ante ac, malesuada. condimentum libero.</p>
+                                <a href="#" class="btn-default du-common-property">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInLeft" data-wow-delay="0.2s">
+                        <figure><img src="{% static 'img/page1_pic2.jpg' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Health &amp; Help</h3>
+                                <p>Lorem ipsum dolor sit amet, consectscing elit. Maecenas moleset alldbus id ictum. Ut neque purus, sollic alitudin non ante ac, malesuada. condimentum libero.</p>
+                                <a href="#" class="btn-default du-common-property">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-faculty-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><img src="{% static 'img/page1_pic3.jpg' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Course Selection</h3>
+                                <p>Lorem ipsum dolor sit amet, consectscing elit. Maecenas moleset alldbus id ictum. Ut neque purus, sollic alitudin non ante ac, malesuada. condimentum libero.</p>
+                                <a href="#" class="btn-default du-common-property">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+	<!--End for student-->
+	
+	
+	
+	<!--Begin news -->
+    <div class="du-news">
+        <div class="container"> 
+            <h2 class="center">News:</h2>
+			
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+			
+            <div class="row">
+			
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-news-item wow fadeInLeft">
+                        <figure><img class="img-responsive" src="{% static 'img/blog1.jpg' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Gulf Today Report On KGS Carnival – 2015</h3>
+                                <p>Including families, pupils and people from different walks of life have attended the ‘Fun For Cause’ carnival organised by The Kindergarten Starters.</p>
+								<a href="#"><img src="{% static 'img/more_arrow1.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-news-item wow fadeInLeft" data-wow-delay="0.2s">
+                        <figure><img class="img-responsive" src="{% static 'img/blog2.jpg' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Blue Ribbon Award for the year 2014-2015</h3>
+                                <p>Excellence is never an accident. It is always the result of high intention and intelligent execution; it represents the wise choice of many alternatives.</p>
+								<a href="#"><img src="{% static 'img/more_arrow1.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-news-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><img class="img-responsive" src="{% static 'img/blog3.jpg' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>The KGS Kindness Mural and Friendship</h3>
+                                <p>At The Kindergarten Starters, we tried several ways of bringing a little joy to the less privileged members of our society, as part of our SEWA endeavours.</p>
+								<a href="#"><img src="{% static 'img/more_arrow1.png' %}" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+	<!--End news-->
+	
+	
+	
+	<!--Begin success story -->
+    <div class="du-graduate-success-story">
+        <div class="container"> 
+            <h2 class="center">Students success Story:</h2>
+			
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+			
+            <div class="row">
+			
+                <div class="cbp-l-slider-testimonials-wrap">
+
+					<div class="cbp-panel" style="max-width:980px">
+						<div id="grid-container" class="cbp-l-grid-slider-testimonials cbp-slider-edge">
+							<div class="cbp-item graphic">
+								<div class="du-best-student">
+									<figure><img src="{% static 'img/kate_01.png' %}" alt=""></figure>
+								</div>
+								
+								<div class="cbp-l-grid-slider-testimonials-body">
+									“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. Suspendisse sodales sed orci ac feugiat”
+								</div>
+								<div class="cbp-l-grid-slider-testimonials-footer">
+									<p class="bodytext"><b>Name:</b> Titus<br><b>Degree:&nbsp;</b> History and French<br><b>University:</b> University of York</p>
+								</div>
+							</div>
+							<div class="cbp-item web-design logos">
+								<div class="du-best-student">
+									<figure><img src="{% static 'img/chris.png' %}" alt=""></figure>
+								</div>
+								<div class="cbp-l-grid-slider-testimonials-body">
+									“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. Suspendisse sodales sed orci ac feugiat”
+								</div>
+								<div class="cbp-l-grid-slider-testimonials-footer">
+									<p class="bodytext"><b>Name:</b> Chris<br><b>Degree:&nbsp;</b> Mathematics<br><b>University:</b> Cardiff</p>
+								</div>
+							</div>
+							<div class="cbp-item graphic logos">
+								<div class="du-best-student">
+									<figure><img src="{% static 'img/darren.png' %}" alt=""></figure>
+								</div>
+								<div class="cbp-l-grid-slider-testimonials-body">
+									“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. Suspendisse sodales sed orci ac feugiat”
+								</div>
+								<div class="cbp-l-grid-slider-testimonials-footer">
+									<p class="bodytext"><b>Name:</b> Darren<br><b>Degree:&nbsp;</b> Mathematics<br><b>University:</b> University of Manchester</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+            </div>
+        </div>
+    </div>
+	<!--End success story-->
+	
+	
+	
+	
+	
+	<!--Begin scholarship -->
+    <div class="du-scholarship">
+        <div class="container"> 
+            <h2 class="center">Recent Scholarship:</h2>
+			
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+			
+            <div class="row">
+			
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-scholarship-item wow fadeInLeft">
+                        <figure><img src="{% static 'img/student.png' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Graduate Scholarships</h3>
+								<p><span><strong>Deadline:  Dec 17 2015 &nbsp;</strong></span>
+								<span>Type: Annual</span></p>
+								
+                                <p>Including families, pupils and people from different walks of life have attended the ‘Fun For Cause’ carnival organised by The Kindergarten Starters.</p>
+                                <a href="#" class="btn-default du-common-property">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-scholarship-item wow fadeInLeft" data-wow-delay="0.2s">
+                        <figure><img src="{% static 'img/badge.png' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>Postgraduate  Scholarships</h3>
+								<p><span><strong>Deadline:  Dec 17 2015 &nbsp;</strong></span>
+								<span>Type: Annual</span></p>
+                                <p>Excellence is never an accident. It is always the result of high intention and intelligent execution; it represents the wise choice of many alternatives.</p>
+                                <a href="#" class="btn-default du-common-property">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                    <div class="du-scholarship-item wow fadeInRight" data-wow-delay="0.4s">
+                        <figure><img src="{% static 'img/diploma.png' %}" alt=""></figure>
+                        <div class="du-caption-box">
+                            <div class="du-caption">
+                                <h3>International Postgraduate Scholarships</h3>
+								<p><span><strong>Deadline:  Dec 17 2015 &nbsp;</strong></span>
+								<span>Type: Annual</span></p>
+                                <p>At The Kindergarten Starters, we tried several ways of bringing a little joy to the less privileged members .</p>
+                                <a href="#" class="btn-default du-common-property">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+	
+	
+	
+	
+	
+	
+    <div class="du-current-news center">
+        <div class="container"> 
+            <h2 class="center">Upcoming Event:</h2>
+            <p class="center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+            <div class="row">
+                <div class="col-lg-4 col-md-12 col-sm-12 du-news-date-box wow fadeInRight" data-wow-delay="0.2s">
+                    <div>
+                        <div class="badge">
+                            22 <span>jun</span>
+                            <strong>6 <img src="{% static 'img/page1_icon4.png' %}" alt=""></strong>
+                        </div>
+                        <div class="du-date-short-des">
+                            <p>Lorem ipsum dolor sit amedgit, consectetur adipscing elitsf tell. Mauris feugiat vari dghus elit, a commodo libero dicuij futumty pottor estibulum   egestas egestas erat et iaculis.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-12 col-sm-12 wow fadeInLeft">
+                    <figure><img src="{% static 'img/page1_pic4.jpg' %}" alt=""></figure>
+                </div>
+            </div>
+            <a href="#" class="btn-default du-common-property">event</a>
+        </div>
+    </div>
+	<!--End current news -->
+	
+	
+	<!--Begin newsletter -->
+    <div class="du-newsletter">
+        <div class="container"> 
+            <h2 class="wow fadeInUp">newsletter sign up</h2>
+            <p class="wow fadeInUp">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu libero scelerisque ligula sagittis faucibus eget quis lacus. <br>Suspendisse sodales sed orci ac feugiat. </p>
+            <div class="row">
+                <div class="col-lg-12 wow fadeInUp">
+                    <form id="newsletter" accept-charset="utf-8">
+        				<div class="success">Your subscribe request has been sent!</div>
+        			    <label class="email">
+        			    	<input type="email" value="Enter Your E-mail:">
+        			    	<span class="error">*This is not a valid email address.</span>
+        			    </label><br>
+                        <a href="#" data-type="submit">Subscribe</a>
+        			</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--End newsletter -->
+
+
+
+<!--footer-->
+<footer>
+    <div class="container">
+        Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
+    </div>
+</footer>
+<!-- End footer-->
+
+
+
+
+
+
+
+
+
+
+    <!-- Main jQuery & other 3rd party Library -->
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap/bootstrap.min' %}"></script>
+	<script type="text/javascript" src="{% static 'js/library/jquery.easing.1.3' %}"></script>
+	
+	<!-- Feature box equal height JS -->
+	<script type="text/javascript" src="{% static 'js/library/jquery.equalheights' %}"></script>	
+	<!-- UI bottom to top JS -->
+	<script type="text/javascript" src="{% static 'js/library/jquery.ui.totop' %}"></script>
+	<!-- Subscription JS -->
+	<script type="text/javascript" src="{% static 'js/library/sForm' %}"></script>	
+	<!-- Animation JS -->
+	<script type="text/javascript" src="{% static 'js/library/wow' %}"></script>
+	<script type="text/javascript" src="{% static 'js/library/device.min' %}"></script>
+	<!-- Menu JS -->
+	<script type="text/javascript" src="{% static 'js/library/flexy-menu' %}"></script>
+	<!-- Text rotator JS -->
+	<script type="text/javascript" src="{% static 'js/library/jquery.simple-text-rotator.min' %}"></script>
+	<!-- Smooth Scroll JS -->
+	<script type="text/javascript" src="{% static 'js/library/smoothscroll.js' %}"></script>
+	
+	<!-- Testimonila JS -->
+	<script type="text/javascript" src="{% static 'js/library/jquery.cubeportfolio.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/library/testimonials.js' %}"></script>
+	<!-- Custom script -->
+	<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+
+	
+  </body>
+</html>

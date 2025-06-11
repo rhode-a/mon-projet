@@ -1,0 +1,13 @@
+<!-- templates/supprimer_emargement.html -->
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Supprimer des emargements{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Confirmer la Suppression</h2>
+  <p>Êtes-vous sûr de vouloir supprimer l'enregistrement du {{ emargement.date }} ?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Oui, supprimer</button>
+    <a href="{% url 'liste_emargements' %}">Annuler</a>
+  </form>
+{% endblock %}

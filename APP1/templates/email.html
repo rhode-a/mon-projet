@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soumission de l'email</title>
+</head>
+<body>
+    <div class="container">
+        <div class="" style="text-align: center;">
+            <ul> <a href="{% url 'connexion' %}" style="text-decoration: none;">Page d'acceuille</a></li>
+        </div>
+        <div class="container" style="width: 550px;margin-left:28%;">
+            <hr>
+            <hr>
+            <hr>
+        </div>
+        <h5 style="text-align: center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">En raison d'oublie de mot de passe veuillez vous rapprochez de l'administrteur car le site n'a pas pour le moment le moyen de vous en changer par rapport a votre mot de passe</h5>
+        <h5 style="text-align: center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Seul l'admin a le droit a la modification de son mail personnel pour assurer la bonne marche des activites</h5>
+        <form method="post" style="margin-left: 25%; border:1px solid black; height:75px ;margin-right:25%; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; margin-top:30px;border-radius:25px;box-shadow:6px 7px 6px 7px;">
+            {% csrf_token %}
+            <input type="email" name="email" placeholder="entrer votre email" style="text-align: center;margin-left:30%;margin-top:20px;">
+            <button type="submit">soumettre</button>
+        </form>
+    </div>
+</body>
+</html>

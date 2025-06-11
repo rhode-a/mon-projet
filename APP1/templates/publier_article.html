@@ -1,0 +1,12 @@
+<!-- templates/publier_article.html -->
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Publier des articles{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Publier un Article</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Publier</button>
+  </form>
+{% endblock %}

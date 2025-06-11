@@ -1,0 +1,12 @@
+<!-- templates/preinscription.html -->
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Faire des preinscriptions{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Préinscription</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Soumettre</button>
+  </form>
+{% endblock %}

@@ -1,0 +1,957 @@
+
+/*------------  General CSS -----------*/
+body {
+	background: #fff;
+	font: 13px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.428571429;
+	color: #8f8f8f;
+}
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
+}
+a:focus {
+	text-decoration: none;
+	background: none;
+}
+a[href^="tel:"] {
+ color: inherit;
+ text-decoration: none;
+}
+textarea, input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
+	-webkit-appearance: none;
+	-moz-appearance: caret;
+}
+p {
+	margin-bottom: 24px;
+	line-height: 24px;
+}
+h1.navbar-brand_ {
+	margin: 0;
+	padding: 0;
+}
+h1.navbar-brand_ a {
+  display: inline-block;
+  padding: 0;
+  width: 110px;
+  padding-top: 7px;
+}
+h2 {
+	font: bold 30px/28px 'Passion One';
+	color: #555a78;
+	text-transform: uppercase;
+	margin: 1px 0 21px 0;
+}
+.common h2{
+	margin-bottom: 40px;
+}
+h2.indent {
+	margin: 0 0 27px 0;
+}
+h3 {
+	font: bold 22px/30px 'Passion One';
+	color: #555a78;
+	text-transform: uppercase;
+	margin: 0 0 10px 0;
+}
+h3 a{
+	color: #555a78;
+}
+h4 {
+	font: bold 13px/18px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #555a78;
+	text-transform: uppercase;
+	margin: 0 0 8px 0;
+}
+.clear{
+	clear:both;
+}
+.pt-0{
+	padding-top:0;
+}
+.pt-20{
+	padding-top:20px;
+}
+.ptb-20{
+	padding:20px 0;
+}
+.pb-20{
+	padding-bottom:20px;
+}
+.pt-30{
+	padding-top:30px;
+}
+.ptb-30{
+	padding:30px 0;
+}
+.pb-30{
+	padding-bottom:30px;
+}
+.pt-40{
+	padding-top:40px;
+}
+.ptb-40{
+	padding:40px 0;
+}
+.pb-40{
+	padding-bottom:40px;
+}
+.pt-50{
+	padding-top:50px;
+}
+.ptb-50{
+	padding:50px 0;
+}
+.pb-50{
+	padding-bottom:50px;
+}
+.pt-70{
+	padding-top:70px;
+}
+.ptb-70{
+	padding:70px 0;
+}
+.pb-70{
+	padding-bottom:70px;
+}
+
+/*------------------section background----------------------*/
+.du-section-ash{
+	background-color: #f8f8f8;
+}
+.du-section-white{
+	background-color: #ffffff;
+}
+
+/*------------------End section background----------------------*/
+
+
+.du-date-short-des {
+	overflow: hidden;
+}
+.dream-university {
+	padding: 107px 0 0 0;
+	background: #f2f2f2;
+}
+.center {
+	text-align: center;
+}
+
+/* ==========================================================================
+   Preloader styles
+   ========================================================================== */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fefefe;
+  z-index: 9999;
+  height: 100%;
+  height: 100%;
+}
+
+#status {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: url(../img/load.gif) no-repeat center center;
+  margin: -170px 0 0 -100px;
+}
+
+
+
+.welcome-message { padding-top: 0;  }
+.welcome-message h1 {
+  color: #fff;
+  font-size:50px;
+  font-weight: 900;
+}
+
+.section-spacing { padding: 0 0; }
+
+
+/*-----content-----*/
+header {
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px; /* Largeur modérée */
+  width: 90%;
+}
+
+header .box {
+  background-color: rgba(146, 153, 184, 0.96);
+  border-radius: 8px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: auto; /* s'adapte au contenu */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+footer {
+	padding: 20px 0 12px 0;
+	background: #c8474f;
+}
+footer p {
+	font: bold 13px/18px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fcf6f6;
+	text-transform: uppercase;
+	margin: 0;
+	float: left;
+}
+footer p a {
+	color: #fcf6f6;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+footer p a:hover {
+	color: #555a78;
+}
+footer p.foo_address {
+	background: url(../img/marker.png) left 7px no-repeat;
+	float: right;
+	padding-left: 33px;
+	margin-top: -8px;
+	display: inline-block;
+}
+footer em {
+	font-style: normal;
+}
+footer span {
+	padding: 0 2px;
+}
+/*------------ui bottom to top--------------*/
+#toTop {
+	display: none;
+	width: 32px;
+	height: 32px;
+	background: url(../img/top.png) 0 top no-repeat;
+	position: fixed;
+	margin-right: -660px !important;
+	right: 50%;
+	bottom: 224px;
+	z-index: 999;
+}
+#toTop:hover {
+	background: url(../img/top.png) 0 bottom no-repeat;
+}
+
+/*------------------------------------------------------------------ 
+	our faculty
+-------------------------------------------------------------------*/
+.our-faculty {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 37px 0;
+	background: #ffffff url(../img/triangle.png) center top no-repeat;
+}
+.for-students {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 37px 0;
+	background: #f2f2f2 url(../img/triangle2.png) center top no-repeat;
+}
+.du-news {
+  background: #c8474f url("../img/triangle.png") no-repeat scroll center top;
+  color: #fff;
+  overflow: hidden;
+  padding: 62px 0 37px;
+  position: relative;
+}
+.du-scholarship {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 37px 0;
+	background: #ffffff url(../img/triangle.png) center top no-repeat;
+}
+.du-graduate-success-story {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 67px 0;
+	background: #f2f2f2 url(../img/triangle2.png) center top no-repeat;
+}
+.du-current-news {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 67px 0;
+	background: #f2f2f2 url(../img/triangle2.png) center top no-repeat;
+}
+
+/*------------------------------------------------------------------ 
+	current news
+-------------------------------------------------------------------*/
+.du-current-news figure {
+	margin-bottom: 39px;
+}
+.du-current-news figure img {
+	width: 100%;
+}
+.du-newsletter {
+	position: relative;
+	overflow: hidden;
+	padding: 62px 0 67px 0;
+	text-align: center;
+	background: #555a78 url(../img/triangle.png) center top no-repeat;
+}
+.du-newsletter h2 {
+	color: #ffffff;
+}
+.du-newsletter p {
+	color: #c5c7d1;
+}
+
+.du-news-date-box {
+	margin-bottom: 39px;
+}
+.du-news-date-box > div {
+	background: #bb4148;
+	padding: 52px 35px 43px 50px;
+	overflow: hidden;
+	text-align: left;
+}
+.du-news-date-box > div .badge {
+	padding: 0;
+	margin: 0;
+	width: 55px;
+	text-align: center;
+	border-radius: 0;
+	background: none;
+	float: left;
+	margin: 0 26px 20px 0;
+	font: bold 60px/36px 'Passion One';
+	color: #ffffff;
+}
+.du-news-date-box > div .badge span {
+	font-size: 36px;
+	display: block;
+	text-transform: uppercase;
+}
+.du-news-date-box > div .badge strong {
+	font-size: 20px;
+	line-height: 35px;
+	margin-top: 15px;
+	border-top: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+	display: block;
+}
+.du-news-date-box > div .badge strong img {
+	margin-left: 10px;
+}
+.du-news-date-box p {
+	color: #ffffff;
+	margin: 0;
+}
+
+/*--------------------------------subscribeForm--------------------------------------*/
+#newsletter {
+	display: inline-block;
+	position: relative;
+	margin-top: 5px;
+}
+#newsletter a {
+	font: bold 13px/36px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #ffffff;
+	background: #c8474f;
+	padding: 0 28px;
+	text-transform: uppercase;
+	display: inline-block;
+	float: none;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+#newsletter a:hover {
+	background: #ffffff;
+	color: #c8474f;
+}
+#newsletter input {
+	background: none;
+	box-shadow: none;
+	border-radius: 0;
+	border: 1px solid #ffffff;
+	font: bold 13px/18px 'Open Sans';
+	text-transform: uppercase;
+	color: #969696;
+	text-align: center;
+	background: #ffffff;
+	height: 48px;
+	width: 570px;
+	padding: 14px;
+	margin: 0 0 35px 0;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+#newsletter input:focus {
+	outline: none;
+	border-color: #ffffff;
+}
+#newsletter .error {
+	position: absolute;
+	top: 0;
+	right: 3px;
+	text-align: right;
+	display: block;
+	overflow: hidden;
+	height: 0px;
+	font-size: 10px;
+	color: #c8474f;
+	text-transform: none;
+	font-weight: normal;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+#newsletter label.invalid .error {
+	height: 19px;
+}
+#newsletter .success {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	text-align: center;
+	border: 1px solid #ffffff;
+	font: 11px/18px 'Open Sans';
+	height: 48px;
+	text-transform: uppercase;
+	color: #c8474f;
+	background: #ffffff;
+	width: 570px;
+	padding: 14px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/*------------------------------------------------------------------ 
+	feature
+-------------------------------------------------------------------*/
+.du-feature-box {
+	margin: 0 0 63px 0;
+	padding: 86px 35px 49px 35px;
+	overflow: hidden;
+	background: #ffffff;
+	border: 1px solid #dadada;
+	text-align: center;
+	overflow: visible !important;
+}
+.du-feature-box .badge {
+	padding: 0;
+	margin: 0 0 0 -47px;
+	width: 94px;
+	height: 94px;
+	line-height: 94px;
+	text-align: center;
+	border-radius: 100%;
+	background: #b93a41;
+	float: left;
+	margin-right: 34px;
+	position: absolute;
+	top: -44px;
+	left: 50%;
+	box-shadow:0px 0px 2px #ddd;
+	-webkit-transition: all .4s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.du-feature-box .badge:before {
+
+	background: none repeat scroll 0 0 #7e7e7e;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.26;
+    position: absolute;
+    top: 0;
+
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2);
+
+    width: 100%;
+    z-index: 9;
+
+    -webkit-transition:all 0.4s ease 0s;
+    -moz-transition:all 0.4s ease 0s;
+    -ms-transition:all 0.4s ease 0s;
+    -o-transition:all 0.4s ease 0s;
+    transition:all 0.4s ease 0s;
+
+}
+.du-feature-box .badge:after {
+    background: none repeat scroll 0 0 #7e7e7e;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+
+    content: "";
+    height: 100%;
+    left: 0;
+    opacity: 0.10;
+    position: absolute;
+    top: 0;
+
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+
+    width: 100%;
+    z-index: 9;
+
+    -webkit-transition:all 0.4s ease 0s;
+    -moz-transition:all 0.4s ease 0s;
+    -ms-transition:all 0.4s ease 0s;
+    -o-transition:all 0.4s ease 0s;
+    transition:all 0.4s ease 0s;
+}
+.du-feature-box .badge:hover{
+	-webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
+	box-shadow:0px 0px 25px 1px rgba(0,0,0,0.2);
+}
+.du-feature-box .du-caption-box {
+	position: relative;
+	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	background: none;
+	overflow: hidden;
+}
+.du-feature-box .du-caption-box .du-caption {
+	padding: 0;
+	overflow: hidden;
+}
+.du-feature-box .du-caption-box .du-caption p {
+	margin-bottom: 20px;
+}
+.du-feature-box .du-caption-box .du-caption .title {
+	text-transform: uppercase;
+	font: bold 22px 'Passion One';
+	color: #555a78;
+	margin-bottom: 13px;
+}
+.du-faculty-item {
+	margin: 0 0 30px 0;
+	overflow: hidden;
+	text-align: center;
+}
+.du-scholarship-item {
+	margin: 0 0 30px 0;
+	overflow: hidden;
+	text-align: center;
+}
+.du-scholarship-item  figure {
+  margin: 0 0 26px 0;
+}
+.du-faculty-item .du-caption-box {
+	position: relative;
+	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	background: none;
+	overflow: hidden;
+}
+.du-faculty-item figure {
+	margin: 0 0 26px 0;
+}
+.du-faculty-item figure img {
+	width: 100%;
+}
+.du-scholarship .du-faculty-item figure img {
+	width: auto;
+}
+.du-faculty-item .du-caption-box .du-caption {
+	padding: 0;
+	overflow: hidden;
+}
+
+
+
+
+
+
+.du-news-item {
+	margin: 0 0 30px 0;
+	overflow: hidden;
+	text-align: center;
+}
+.du-news-item figure {
+  margin: 0 0 0 0;
+}
+.du-news-item  figure img {
+  width: 100%;
+}
+.du-news-item .du-caption-box h3{
+	color:#fff;
+}
+.du-news-item .du-caption-box{
+	padding: 30px 75px;
+	background: #20acb8;
+	text-align: center;
+	color:#fff;
+}
+.du-news-item .du-caption-box a:hover{
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+/*-----------------------------------btn override----------------------------------------------*/
+.btn-default.du-common-property {
+	box-shadow: none;
+	text-decoration: none !important;
+	display: inline-block;
+	padding: 0 20px;
+	font: bold 13px/34px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	text-transform: uppercase;
+	text-shadow: none;
+	border-radius: 0;
+	color: #ffffff;
+	background: #555a78;
+	border: 1px solid #555a78;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+.btn-default.du-common-property:hover {
+	color: #555a78;
+	background: transparent !important;
+	text-decoration: none !important;
+	-webkit-transition: all 0.25s;
+	transition: all 0.25s;
+}
+
+
+/*------------------------------------------------------------------ 
+	About
+-------------------------------------------------------------------*/
+
+.du-page-header{
+	background-color: #f8f8f8;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	border-bottom: 1px solid #f0f0f0;
+}
+.du-breadcrumb-title h3{
+	margin-bottom: 0;
+}
+.du-choose-list{
+	padding: 0;
+}
+.du-choose-list li {
+  font-size: 13px;
+  line-height: 22px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  padding-left: 19px;
+  background: url(../img/list_arrow.png) left 5px no-repeat;
+  border-bottom: 1px solid #f1f2f2;
+  padding-bottom: 15px;
+}
+.du-choose-list li:last-child {
+	border-bottom: 0;
+}
+.du-choose-list li a{
+	  color: #8f8f8f;
+}
+.du-choose-list li a:hover{
+	color: #c8474f;
+}
+
+.du-contact h4{
+	padding-bottom: 10px;
+}
+
+.du-contact .du-choose-list li{
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.du-google-map iframe{
+	width: 100%;
+	height: 400px;
+}
+.du-google-map {
+  padding-top: 10px;
+}
+.du-principal-comment .principal-photo img{
+	
+}
+
+
+/*------------------------------------------------------------------ 
+	Faculty
+-------------------------------------------------------------------*/
+.civil-engineering h4, .electronic-engineering h4, .mechanical-engineering h4{
+	padding-bottom: 15px;
+}
+.civil-engineering .faculty-short-info .du-choose-list, .electronic-engineering .faculty-short-info .du-choose-list, .mechanical-engineering .faculty-short-info .du-choose-list{
+	padding: 40px 0;
+}
+/*
+.electronic-engineering .faculty-short-info .du-choose-list{
+	padding: 40px 0;
+}
+.mechanical-engineering .faculty-short-info .du-choose-list{
+	padding: 40px 0;
+}*/
+
+.du-faculty-name ul{
+	list-style: none;
+	padding: 0;
+}
+.du-faculty-name .du-choose-list li{
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+.faculty-short-info .du-choose-list li{
+	border-bottom: 0;
+	padding-bottom: 0;
+	margin-bottom: 5px;
+}
+
+
+
+/*------------------------------------------------------------------ 
+	Admission
+-------------------------------------------------------------------*/
+.admission-feature {
+  text-align: center;
+}
+.thumbnail .du-choose-list li {
+  border-bottom: 0;
+  padding-bottom: 0;
+  background: none;
+  padding: 0;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+
+/*------------------------------------------------------------------ 
+	Event
+-------------------------------------------------------------------*/
+.du-all-event .row:last-child .du-news-date-box{
+	margin-bottom: 0;
+}
+
+
+
+/*------------------------------------------------------------------ 
+	Blog
+-------------------------------------------------------------------*/
+.blog-page-pagination {
+  text-align: center;
+}
+.blog-page-pagination .pagination {
+	margin: 0;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+  background-color: #20acb8;
+  border-color: #20acb8;
+}
+
+
+
+
+/*--------------- Blog sidebar Social ----------------*/
+.social
+{
+	margin:0px 0 20px 0;
+	padding:0px
+}
+	#header .social
+{
+	margin-top:7px
+}
+.social li
+{
+	display:inline-block;
+	margin-left:20px
+}
+.social a
+{
+	color:rgba(255,255,255,0.8);
+	font-size:16px;
+	-webkit-transition:color 0.2s linear;
+	-moz-transition:color 0.2s linear;
+	-o-transition:color 0.2s linear;
+	transition:color 0.2s linear
+}
+.social a:hover
+{
+	color:#fff
+}
+	#header .social a
+{
+	font-size:20px
+}
+.widget .social li {
+  margin: 0px 8px 0 0px;
+  padding: 0;
+}
+.social-boxed li
+{
+	text-align:center
+}
+.social-boxed a
+{
+	background-color:#c8474f;
+	color:#fff;
+	display:block;
+	height:32px;
+	line-height:32px;
+	-webkit-transition:all 0.2s linear;
+	-moz-transition:all 0.2s linear;
+	-o-transition:all 0.2s linear;
+	transition:all 0.2s linear;
+	width:32px
+}
+.social-boxed a:hover
+{
+	-webkit-border-radius:50%;
+	-moz-border-radius:50%;
+	border-radius:50%
+}
+
+
+/*--------------- Blog sidebar Recent + Popular post ----------------*/
+
+.widget .widget-title {
+  margin-bottom: 20px;
+}
+
+.sidebar .sidebar-single-post {
+  background-color: transparent;
+  border: 2px solid rgba(0,0,0,0.1);
+}
+.sidebar-single-post {
+  background-color: rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+  padding: 10px 0px;
+}
+.property-small-picture {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.sidebar-single-post a{
+	color: #555a78;
+}
+.sidebar-single-post-picture img {
+  width: 100%;
+}
+.comment-avatar {
+  width: 90px;
+  height: 90px;
+}
+
+
+
+/*------------------------------------------------------------------ 
+	Contact
+-------------------------------------------------------------------*/
+.du-contact .du-google-map {
+  padding-top: 0;
+}
+.du-contact-form .du-common-property{
+	margin-top: 15px;
+}
+.du-contact-form{
+	padding-top: 8px;
+}
+
+
+
+
+
+/*------------------------------------------------------------------ 
+	responsive
+-------------------------------------------------------------------*/
+
+@media (min-width: 1200px) {
+
+	.comment-form textarea{
+		width: 556px !important;
+	}
+	.comment-form input.form-control{
+		width: 356px;
+	}
+	.selectwrap input {
+	  width: 370px;
+	}
+
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------*/
+@media (max-width: 767px) {
+
+	 #newsletter {
+	 display: block;
+	}
+	 #newsletter input,  #newsletter .success,  #newsletter label {
+	 width: 100%;
+	 display: block;
+	 margin: 0;
+	}
+	.welcome-message h1{
+		font-size:28px;
+	}
+	.du-feature-box {
+	  margin: 0 0 93px 0;
+	}
+	 
+}
+a:focus {outline: 0 solid;}
+
+
+/*------------------------------------------------------------------ 
+	banner area
+-------------------------------------------------------------------*/
+.du-featured-photo{
+	position:relative;
+	overflow:hidden;
+	z-index;1;
+}
+.du-featured-text {
+  position: absolute;
+  top: 25%;
+  text-align: center;
+  left: 10%;
+  z-index:99;
+}
+.du-featured-photo img {
+  width: 100%;
+}
+.du-best-student {
+  overflow: hidden;
+  text-align: center;
+  width: 102px;
+  margin: 0 auto;
+}

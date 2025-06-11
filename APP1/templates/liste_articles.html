@@ -1,0 +1,35 @@
+<!-- templates/options.html -->
+ {% extends "base.html" %}
+{% load static %}
+{% block title %}T.T.G Network - Gestion École Lister les articles{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Liste des Articles</h2>
+  <ul>
+    
+    <table>
+      <tr>
+        <th>Auteur</th>
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Approuve / ou non</th>
+        <th>Actions</th>
+      </tr>
+      {% for article in articles %}
+      <tr>
+        <td>{{ article.auteur }}</td>
+        <td> {{ article.titre }}</td>
+        <td> {{ article.contenu }}</td>
+        <td> {{ article.approuve }}</td>
+        <td>
+          <a href="#"><button>Details</button></a>
+
+        </td>
+
+      </tr>
+       {% endfor %}
+    </table>
+   
+  </ul>
+{% endblock %}
+

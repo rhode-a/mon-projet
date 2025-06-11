@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Liste des filieres {% endblock %}
+{% block content %}
+  <hr>
+  <h2>Liste des Filieres</h2>
+  <ul>
+   
+      <table>
+         
+        <tr>
+          <th>Filieres</th>
+          <th>Actions</th>
+        </tr>
+        {% for filiere in filieres %}
+        <tr>
+          <td>{{ filiere.nom }}</td>
+          <td><a href="#"><button>Details</button></a></td>
+        </tr>
+          {% endfor %}
+      </table>
+  
+  </ul>
+{% endblock %}

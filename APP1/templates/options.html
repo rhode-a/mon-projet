@@ -1,0 +1,13 @@
+<!-- templates/options.html -->
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Listes des options{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Liste des Options</h2>
+  <ul>
+    {% for option in options %}
+      <li>{{ option.nom }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+

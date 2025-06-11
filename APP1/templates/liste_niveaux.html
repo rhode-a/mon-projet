@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Listes des niveaux{% endblock %}
+{% block content %}
+  <hr>
+  
+     <style>
+
+       body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+
+       h2 {
+    margin-top: 40px;
+    color: #333;
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+  }
+
+  h2::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: #007BFF;
+    margin: 8px auto 0;
+    border-radius: 2px;
+  }
+
+  table {
+    width: 60%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  thead {
+    background-color: #f2f2f2;
+  }
+
+  th, td {
+    padding: 12px 20px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+
+<h2>Liste des Niveaux</h2>
+  <ul>
+<table>
+  <thead>
+    <tr>
+      <th>Différents niveaux</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    {% for niveau in niveaux %}
+    <tr>
+      <td>{{ niveau.nom }}</td>
+      <td><a href="#"><button>Détails</button></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+  </ul>
+{% endblock %}

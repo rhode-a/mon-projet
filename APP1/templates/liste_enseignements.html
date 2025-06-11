@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École recherche des cours{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Liste des Enseignements/Cours</h2>
+  <ul>
+      <table>
+        <tr>
+          <th>Enseignants</th>
+          <th>Matiere et ses details</th>
+          <th>Actions</th>
+        </tr>
+        {% for enseignement in enseignements %}
+        <tr>
+          <td>{{ enseignement.formateur }}</td>
+          <td>{{ enseignement.matiere }}</td>
+          <td><a href="#"><button>Details</button></a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    
+  </ul>
+{% endblock %}

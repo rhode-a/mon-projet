@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de connexion</title>
+</head>
+<body>
+    Bienvenue a la connexion
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="nom" placeholder="Nom">
+        <input type="text" name="password" placeholder="Mot de passe">
+        <button type="submit">soumettre</button>
+    </form>
+    <hr>
+    <button><a href="{% url 'entrer$^poij ' %}">creer un compte</a></button>
+</body>
+</html>

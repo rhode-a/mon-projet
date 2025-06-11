@@ -1,0 +1,38 @@
+<!-- templates/valider_preinscription.html -->
+{% extends "base.html" %}
+{% block title %}T.T.G Network - Gestion École Valider des preinscriptions{% endblock %}
+{% block content %}
+  <hr>
+  <h2>Valider les Préinscriptions</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Date de Préinscription</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for preinscription in preinscriptions %}
+        <tr>
+          <td>{{ preinscription.nom }}</td>
+          <td>{{ preinscription.email }}</td>
+          <td>{{ preinscription.date_preinscription }}</td>
+          {% if user.is_staff %}
+          <td>
+            <form method="post" action="{% url 'valider_inscription' preinscription.id %}">
+              {% csrf_token %}
+              <button type="submit">Valider</button>
+            </form>
+          </td>
+          {% endif %}
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">Aucune préinscription en attente.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
