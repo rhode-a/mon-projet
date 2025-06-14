@@ -25,4 +25,5 @@ urlpatterns = [
     path('email',views.email, name='email'),
     path('modifier/<int:pk>/',views.modifier, name='modifier'),
     path('entrer',views.entrer, name='entrer'),
+    
 ]

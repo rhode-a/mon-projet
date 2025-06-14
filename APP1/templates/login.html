@@ -1,19 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+{% load static %}
+{% block title %}{% endblock %}
+<html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page de connexion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion</title>
+  <style>
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url("https://www.bing.com/images/search?view=detailV2&ccid=gCDLjECl&id=62595CD895ECC32A9958C0F3E1EC36965F1C6E2F&thid=OIP.gCDLjEClpBBfxCUiVpj2bQHaFj&mediaurl=https%3A%2F%2Fimg.freepik.com%2Fpremium-vector%2Ftg-logo-design_731343-1321.jpg%3Fw%3D740&cdnurl=https%3A%2F%2Fth.bing.com%2Fth%2Fid%2FR.8020cb8c40a5a4105fc425225698f66d%3Frik%3DL24cX5Y27OHzwA%26pid%3DImgRaw%26r%3D0&exph=555&expw=740&q=logo+T.T.G&form=IRPRST&ck=0E5B6A4AF46E6763DA13C92D5586EA28&selectedindex=16&itb=0&cw=1222&ch=585&ajaxhist=0&ajaxserp=0&cit=ccid_X0%2Fas%2BHh*cp_80B09011CDE9287FF6F0BABA3C7BA3B1*mid_13955F0295C5C83DD842FACBB8B1446431598253*simid_607998079827397137*thid_OIP.X0!_as-HhkF2wIJuMphFrUQHaHa&vt=2") no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .login-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+      animation: slideUp 1.2s ease-out;
+    }
+
+    h2 {
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3897f0;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2b80d6;
+    }
+
+    .signup {
+      margin-top: 15px;
+    }
+
+    .signup a {
+      text-decoration: none;
+      color: #3897f0;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0); opacity: 1; }
+    }
+  </style>
 </head>
 <body>
-    Bienvenue a la connexion
+  <div class="login-box" id="loginBox">
+    <h2>CONNEXION👋</h2>
     <form method="post">
-        {% csrf_token %}
-        <input type="text" name="nom" placeholder="Nom">
-        <input type="text" name="password" placeholder="Mot de passe">
-        <button type="submit">soumettre</button>
+      {% csrf_token %}
+      <input type="text" name="nom" placeholder="Nom d'utilisateur" required>
+      <input type="password" name="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
     </form>
-    <hr>
-    <button><a href="{% url 'entrer' %}">creer un compte</a></button>
+    <div class="signup">
+      Pas de compte ? <a href="{% url 'entrer' %}">Créer un compte</a>
+    </div>
+
+    <a href="{% url 'index' %}" style="text-decoration: none;">Page d'avant</a>
+  </div>
+
+  <script>
+    // Animation JS supplémentaire (optionnelle)
+    document.addEventListener('DOMContentLoaded', () => {
+      const box = document.getElementById('loginBox');
+      box.style.opacity = 0;
+      setTimeout(() => {
+        box.style.transition = "opacity 1s";
+        box.style.opacity = 1;
+      }, 100);
+    });
+  </script>
 </body>
 </html>

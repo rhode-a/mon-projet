@@ -7,28 +7,25 @@
   <h2>Liste des Articles</h2>
   <ul>
     
-    <table>
-      <tr>
-        <th>Auteur</th>
-        <th>Titre</th>
-        <th>Contenu</th>
-        <th>Approuve / ou non</th>
-        <th>Actions</th>
-      </tr>
-      {% for article in articles %}
-      <tr>
-        <td>{{ article.auteur }}</td>
-        <td> {{ article.titre }}</td>
-        <td> {{ article.contenu }}</td>
-        <td> {{ article.approuve }}</td>
-        <td>
-          <a href="#"><button>Details</button></a>
+   <table class="styled-table">
+  <tr>
+    <th>Auteur</th>
+    <th>Titre</th>
+    <th>Contenu</th>
+    <th>Approuve / ou non</th>
+  </tr>
+  {% for article in articles %}
+  <tr>
+    <td>{{ article.auteur }}</td>
+    <td>{{ article.titre }}</td>
+    <td>{{ article.contenu }}</td>
+    <td>{{ article.approuve }}</td>
+    <td>
 
-        </td>
-
-      </tr>
-       {% endfor %}
-    </table>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
    
   </ul>
 {% endblock %}

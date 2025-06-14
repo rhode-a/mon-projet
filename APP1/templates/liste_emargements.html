@@ -96,7 +96,6 @@
         <th>Formateur</th>
         <th>Date</th>
         <th>Heure</th>
-        <th>Actions</th>
       </tr>
        {% for emargement in emargements %}
       <tr>
@@ -104,12 +103,7 @@
         <td>{{ emargement.formateur }}</td>
         <td> {{ emargement.date }}</td>
         <td> {{ emargement.heure_cours }}</td>
-        <td>
-          <a href="#"><button>Details</button></a>
-          <a href="#"><button>Modifier</button></a>
-          <a href="#"><button>Supprimer</button></a>
-
-        </td>
+        
       </tr>
       {% empty %}
         <tr>

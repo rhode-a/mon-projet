@@ -1,12 +1,13 @@
-{%  load static %}
-<!DOCTYPE html>
 
+<!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>T.T.G </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Bootstrap -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">	 
@@ -33,52 +34,45 @@
   </head>
   <body>
   
-  
- 
-  
+  <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="{% url 'index' }%" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>T.T.G Network</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+                <a href="{% url 'preinscription' %}" class="nav-item nav-link active">Preinscription</a>
+                <a href="{% url 'options' %}" class="nav-item nav-link">Options</a>
+                <a href="{% url 'article' %}" class="nav-item nav-link">Article</a>
+                <a href="{% url 'recherche_moyenne' %}" class="nav-item nav-link">Recherches moyenne</a>
+                <a href="{% url 'filiere' %}" class="nav-item nav-link">Filière</a>
+                <a href="{% url 'niveau' %}" class="nav-item nav-link">Niveau</a>
+                <a href="{% url 'etudiant' %}" class="nav-item nav-link">Etudiant</a>
+                <a href="{% url 'matiere' %}" class="nav-item nav-link">Matiere</a>
+                <a href="{% url 'enseignement' %}" class="nav-item nav-link">Enseignement</a>
+                <a href="{% url 'note' %}" class="nav-item nav-link">liste</a>
+                <a href="{% url 'liste_emargements' %}" class="nav-item nav-link"></a>
+               
+                       <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-men-0">
+                        <a href="{% url 'note' %}" class="dropdown-item">Lites des Notes</a>
+                        <a href="{% url 'liste_emargements' %}" class="dropdown-item" ">Listes Emargements</a>
+                        <a href="{% url 'admin:index' %}" class="dropdown-item">Administrateur</a>
+                    </div>
+                </div>
+               
+                <a href="{% url 'urlregister' %}" class="btn btn-primary py-2 px-4 d-none d-lg-block" style="height:30px ;">Ajout-User</a>
+                <a href="{% url 'urllogout' %}" class="btn btn-danger py-2 px-4 d-none d-lg-block" style="height:30px ;">Deconnexion</a>
+            </div>
+           
+        </div>
+    </nav>
 
-  
-<!--header-->
-<header class="clearfix">
- 
-	<div class="box"> 
-		<div class="container">
-		
-			<div class="header-element clearfix"> 
-				<div class="row">
-					<div class="col-md-4">
-						<h1 class="navbar-brand navbar-brand_"><a href="{% url 'index' %}"><img class="img-responsive" src="{% static 'img/logo.png'  %}" alt="logo"></a></h1>
-					</div>
-					<div class="col-md-8">
-						<ul class="flexy-menu orange">
-							<li class="active"><a href="{% url 'index' %}"><i class="icon-heart"></i>Home</a></li>
-							<li><a href="{% url 'preinscription' %}"><i class="icon-cogs"></i>Preinscription</a></li>
-							<li><a href="{% url  'options' %}"><i class="icon-th"></i>Events</a>
-							</li>
-							<li><a href="{% url 'liste_emargements' %}"><i class="icon-th"></i>Liste Emargement</a></li>
-							<li><a href="{% url 'article' %}"><i class="icon-th"></i>Articles</a></li>
-							<li><a href="{% url 'recherche_moyenne' %}"><i class="icon-th"></i>Moyenne</a></li>
-							<li><a href="{% url 'filiere' %}"><i class="icon-th"></i>Filiere</a></li>
-							<li><a href="{% url 'niveau' %}"><i class="icon-th"></i>Niveaux</a></li>
-							<li><a href="{% url 'etudiant' %}"><i class="icon-th"></i>Etudiants</a></li>
-						
-								<ul>
-									<li><a href="{% url 'matiere' %}">Matiere</a></li>
-									<li><a href="{% url 'enseignement' %}">Enseignement</a></li>
-								</ul>
-							</li>
-							<li><a href="{% url 'note' %}"><i class="icon-envelope"></i>Note</a></li>
-              <li><a href="{% url 'admin:index' %}"><i class="icon-envelope"></i>Supression/Ajout/Modification</a></li>
-              <li><a href="{% url 'urlregister' %}">Ajouter un utilisateur</a></li>
-          <li><a href="{% url 'urllogout' %}">deconnexion</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>			
-	</div>	
-</header>
-<!--header-->
  
 
 <div class="du-banner-area">

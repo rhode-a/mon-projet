@@ -186,7 +186,7 @@ header {
 }
 
 header .box {
-  background-color: rgba(146, 153, 184, 0.96);
+  background-color: rgba(209, 163, 163, 0.96);
   border-radius: 8px;
   padding: 20px 30px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -199,7 +199,7 @@ header .box {
 
 footer {
 	padding: 20px 0 12px 0;
-	background: #c8474f;
+	
 }
 footer p {
 	font: bold 13px/18px 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
